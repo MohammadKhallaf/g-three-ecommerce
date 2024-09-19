@@ -10,6 +10,7 @@ import WishlistPage from "./pages/WishlistPage";
 import CartProvider from "./store/cart-context";
 import WishlistProvider from "./store/wishlist-context";
 import ProductProvider from "./store/product-context";
+import AuthProvider from "./store/auth-context";
 
 function App() {
   // lifecycle listen to the changes in the cart
@@ -18,25 +19,27 @@ function App() {
   // 3. useState (()=>{return})
 
   return (
-    <ProductProvider>
-      {/* --- */}
-      <CartProvider>
-        <WishlistProvider>
-          <div className="App">
-            <CustomNavbar />
+    <AuthProvider>
+      <ProductProvider>
+        {/* --- */}
+        <CartProvider>
+          <WishlistProvider>
+            <div className="App">
+              <CustomNavbar />
 
-            <Routes>
-              <Route path="/" element={<ProductsGallery />} />
-              <Route path="cart" element={<CartPage />} />
-              <Route path="wishlist" element={<WishlistPage />} />
-              <Route path="login" element={<LoginPage />} />
-              <Route path="*" element={<Container>Not Found</Container>} />
-            </Routes>
-            <Toaster />
-          </div>
-        </WishlistProvider>
-      </CartProvider>
-    </ProductProvider>
+              <Routes>
+                <Route path="/" element={<ProductsGallery />} />
+                <Route path="cart" element={<CartPage />} />
+                <Route path="wishlist" element={<WishlistPage />} />
+                <Route path="login" element={<LoginPage />} />
+                <Route path="*" element={<Container>Not Found</Container>} />
+              </Routes>
+              <Toaster />
+            </div>
+          </WishlistProvider>
+        </CartProvider>
+      </ProductProvider>
+    </AuthProvider>
   );
 }
 // .Provider

@@ -108,3 +108,8 @@ js -> normal js function / file
 - Local Storage
   - `localStorage.setItem("key",value)` -> value --> string
   - `localStorage.getItem("key")`
+- Optimization:
+  - useMemo -> save value
+  - useCallback -> save function
+- API integration 
+  - post request
