@@ -1,11 +1,11 @@
-import { useContext } from "react";
 import { Badge, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { CartContext, WishlistContext } from "../App";
+import { useCart } from "../store/cart-context";
+import { useWishlist } from "../store/wishlist-context";
 
 const CustomNavbar = () => {
-  const { cart } = useContext(CartContext);
-  const { wishlist } = useContext(WishlistContext);
+  const { cart } = useCart();
+  const { wishlist } = useWishlist();
 
   return (
     <Navbar bg="dark" data-bs-theme="dark">

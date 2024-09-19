@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import { Button, Card, Container, Stack } from "react-bootstrap";
-import { CartContext } from "../App";
+import { useCart } from "../store/cart-context";
 
 function CartPage() {
-  const { cart, removeFromCart } = useContext(CartContext);
+  const { cart, removeFromCart } = useCart();
 
   // product name - price - image - qty
   // sum

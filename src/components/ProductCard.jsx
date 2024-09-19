@@ -1,17 +1,17 @@
-import { useContext } from "react";
+import { Stack } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { CartContext, WishlistContext } from "../App";
-import { Stack } from "react-bootstrap";
+import { useCart } from "../store/cart-context";
+import { useWishlist } from "../store/wishlist-context";
+
 function ProductCard({ product }) {
-  const { cart, addToCart } = useContext(CartContext);
-  const { wishlist, addToWishlist, removeFromWishlist } =
-    useContext(WishlistContext);
+  const { cart, addToCart } = useCart();
+  const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
 
   const idx = wishlist.findIndex((item) => item.id === product.id);
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="https://placehold.co/600x400" />
+      <Card.Img variant="top" src={product.image} />
       <Card.Body>
         <Card.Title>{product.title}</Card.Title>
         <Card.Text>
