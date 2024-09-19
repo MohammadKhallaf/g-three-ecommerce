@@ -40,9 +40,28 @@ as={Ext.Co}
 
 ## lifecycle
 ```jsx
-useEffect(()=>{ //==>
+useEffect(()=>{ //==> initial render
 
 },[])
+```
+```jsx
+useEffect(()=>{ //==> state (cart) change
+
+},[cart])
+```
+```jsx
+useEffect(()=>{ //==> component destroy
+
+return ()=>{
+
+}
+},[])
+```
+```jsx
+useEffect(()=>{ //==> with every render
+
+
+})
 ```
 
 ## Notes
@@ -50,7 +69,7 @@ useEffect(()=>{ //==>
   - `package.json` -> look for `bootstrap` & `react-bootstrap`
 - all imports should be at the top of the file
 
-## Task 
+## Task [/]
 - Cart
   - add to cart
   - remove from cart
@@ -73,3 +92,15 @@ useEffect(()=>{ //==>
   - -> admins assign tasks
   - -> employees do and finish task
 - E-learning
+
+
+## Today's plan
+- Complete the cart flow ...
+
+
+
+jsx -> react component
+js -> normal js function / file
+
+# 19 sept
+- using any library
