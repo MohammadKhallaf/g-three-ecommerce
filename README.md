@@ -63,7 +63,7 @@ useEffect(()=>{ //==> with every render
 
 })
 ```
-
+[] ->> dependency array
 ## Notes
 - How to check if bootstrap is installed
   - `package.json` -> look for `bootstrap` & `react-bootstrap`
@@ -104,3 +104,7 @@ js -> normal js function / file
 
 # 19 sept
 - using any library
+- install -> follow instruction -> don't forget the imports
+- Local Storage
+  - `localStorage.setItem("key",value)` -> value --> string
+  - `localStorage.getItem("key")`

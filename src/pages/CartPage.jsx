@@ -8,7 +8,7 @@ function CartPage() {
   // product name - price - image - qty
   // sum
   const sum = cart.reduce((prev, current) => {
-    return prev + current.price;
+    return prev + +current.price;
   }, 0);
 
   return (
@@ -38,7 +38,7 @@ function CartPage() {
         })}
       </Stack>
       <hr />
-      <p>{sum}</p>
+      <b>{sum} EGP</b>
     </Container>
   );
 }

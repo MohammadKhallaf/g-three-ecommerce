@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { Badge, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { CartContext } from "../App";
+import { CartContext, WishlistContext } from "../App";
 
 const CustomNavbar = () => {
   const { cart } = useContext(CartContext);
+  const { wishlist } = useContext(WishlistContext);
 
   return (
     <Navbar bg="dark" data-bs-theme="dark">
@@ -17,7 +18,10 @@ const CustomNavbar = () => {
             Home
           </Nav.Link>
           <Nav.Link as={Link} to="wishlist">
-            Wishlist
+            Wishlist{" "}
+            <Badge bg="warning" text="dark">
+              {wishlist.length}
+            </Badge>
           </Nav.Link>
           <Nav.Link as={Link} to="cart">
             Cart
